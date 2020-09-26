@@ -1,9 +1,27 @@
-name: [Insert Project Name]
+name: retail-forecast
 channels:
   - defaults
   - conda-forge
 dependencies:
+  - jupyter
+  - jupyter_contrib_nbextensions
+  - pandas
+  - xlrd
+  - scipy
+  - numpy
+  - matplotlib
+  - seaborn
+  - plotly
+  - scikit-learn
+  - statsmodels
+  - keras
+  - click
+  - requests
+  - black
+  - pytest
+  - pytest-mock
+  - requests-mock
   - pip
   - pip:
     - -e ./
-
+    - -e git+https://github.com/dilshod/xlsx2csv#egg=xlsx2csv
