@@ -136,3 +136,8 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# project specific ignores
+src/xlsx2csv/
+data/raw/*
+!data/raw/README.md
