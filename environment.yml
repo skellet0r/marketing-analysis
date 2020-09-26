@@ -1,0 +1,9 @@
+name: [Insert Project Name]
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - pip
+  - pip:
+    - -e ./
+
