@@ -23,4 +23,9 @@ setuptools.setup(
         "requests",
         "xlsx2csv @ git+https://github.com/dilshod/xlsx2csv#egg=xlsx2csv",
     ],
+    entry_points={
+        "console_scripts": [
+            "project=src.data:project",
+        ]
+    },
 )
