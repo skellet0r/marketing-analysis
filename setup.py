@@ -3,7 +3,7 @@ import setuptools
 setuptools.setup(
     name="src",
     version="1.0.0",
-    url="https://github.com/Skellet0r/retail-forecast",
+    url="https://github.com/Skellet0r/marketing-analysis",
     author="Edward Amor",
     license="GPL-3.0",
     author_email="edward.amor3@gmail.com",

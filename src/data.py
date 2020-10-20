@@ -5,6 +5,8 @@ import click
 from xlsx2csv import Xlsx2csv
 import pandas as pd
 
+import gzip
+
 
 @click.group()
 def project():
@@ -69,3 +71,10 @@ def init():
     # save the compiled data
     compiled_df.to_csv("data/raw/data.csv", index=False)
     click.echo("Saved compiled data to data/raw/data.csv")
+
+    # decompress geojson data
+    if not path.exists("data/external/countries.geojson"):
+        click.echo("Decompressing countries.geojson")
+        with gzip.open("data/external/countries.geojson.gz") as f:
+            with open("data/external/countries.geojson", "wb") as g:
+                g.write(f.read())

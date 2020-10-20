@@ -1,4 +1,4 @@
-name: retail-forecast
+name: marketing-analysis
 channels:
   - defaults
   - conda-forge

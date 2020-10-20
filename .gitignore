@@ -141,3 +141,4 @@ cython_debug/
 src/xlsx2csv/
 data/raw/*
 !data/raw/README.md
+data/external/countries.geojson
