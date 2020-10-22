@@ -13,6 +13,7 @@ dependencies:
   - seaborn
   - plotly
   - scikit-learn
+  - yellowbricks
   - statsmodels
   - keras
   - click
