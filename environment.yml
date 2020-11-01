@@ -14,7 +14,6 @@ dependencies:
   - plotly
   - scikit-learn
   - xgboost
-  - yellowbricks
   - statsmodels
   - keras
   - click
@@ -26,4 +25,5 @@ dependencies:
   - pip
   - pip:
     - -e ./
+    - yellowbricks
     - -e git+https://github.com/dilshod/xlsx2csv#egg=xlsx2csv
