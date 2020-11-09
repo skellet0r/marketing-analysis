@@ -1,66 +1,93 @@
-# Exit Report of Project <X> for Customer <Y>
+# Exit Report of Project *Marketing Analysis* for Customer *RNS Ltd.*
 
-Instructions: Template for exit criteria for data science projects. This is concise document that includes an overview of the entire project,
-including details of each stage and learning. If a section isn't applicable (e.g. project didn't include a ML model), simply mark that section
-as "Not applicable". Suggested length between 5-20 pages. Code should mostly be within code repository (not in this document).
+Customer: RNS Ltd.
 
-Customer: <Enter Customer Name\>
-
-Team Members: <Enter team member names. Please also enter relevant parties names, such as team lead, Account team, Business stakeholders, etc.\>
+Team Members: Edward Amor
 
 ## Overview
 
-<Executive summary of entire solution, brief non-technical overview\>
+Unaware of which customers they should focus their marketing efforts on, we
+were tasked with using clustering and classification to segment customers and
+predict future customer value respectively. Clustering allowed us to identify
+groupings for our customer base where we otherwise didn't have any. Whereas,
+classification allowed us to predict the future value of a customer to our client
+based on their transaction history.
 
 ## Business Domain
-<Industry, business domain of customer\>
+
+Our client RNS Ltd., is a UK-based online retailer of unique gift-ware. The company 
+mainly sells their products to other businesses, wholesalers, in large batches.
 
 ## Business Problem
-<Business problem and exact use case(s), why it matters\>
+
+The problem RNS Ltd. faced was trouble bootstrapping their marketing department.
+Since the department was still in its infancy they needed an analysis of their`
+customer base, along with some way to identify who to market to in the future.
+Identifying who your best customers are is vitally important because they provide
+the majority of your revenue. 
+
+> "20% of your customers generate 80% of the revenue".
 
 ## Data Processing
-<Schema of original datasets, how data was processed, final input data schema for model\>
+
+Original Dataset Schema:
+
+InvoiceNo: Invoice number. Nominal. A 6-digit integral number uniquely assigned to 
+each transaction. If this code starts with the letter 'c', it indicates a 
+cancellation.
+StockCode: Product (item) code. Nominal. A 5-digit integral number uniquely assigned 
+to each distinct product.
+Description: Product (item) name. Nominal.
+Quantity: The quantities of each product (item) per transaction. Numeric.
+InvoiceDate: Invice date and time. Numeric. The day and time when a transaction was 
+generated.
+UnitPrice: Unit price. Numeric. Product price per unit in sterling (Â£).
+CustomerID: Customer number. Nominal. A 5-digit integral number uniquely assigned to 
+each customer.
+Country: Country name. Nominal. The name of the country where a customer resides.
+
+Processing:
+
+We take the transaction data, and transform it to create 3 distinct features aligning 
+with the RFM marketing research structure. The result is a multivariate time series
+which we use to train a classification algorithm.
+
+Output Dataset Schema:
+
+Output a 1 for a high priority customer, 0 for a low priority customer.
 
 ## Modeling, Validation
-<Modeling techniques used, validation results, details of how validation conducted\>
 
-## Solution Architecture
-<Architecture of the solution, describe clearly whether this was actually implemented or a proposed architecture.
-Include diagram and relevant details for reproducing similar architecture. Include details of why this architecture was chosen
-versus other architectures that were considered, if relevant\>
+For modeling, we used a variety of classification algorithms, training them to assess
+baseline what their results looked like. For testing validation, we split our dataset
+into 5 partitions, maintaining the time dimensionality to prevent data leakage.
 
 ##	Benefits
 	
-###	Company Benefit (internal only. Double check if you want to share this with your customer)
-<What did our company gain from this engagement? ROI, revenue,  etc\>
-
 ###	Customer Benefit
-What is the benefit (ROI, savings, productivity gains etc)  for the customer? If just POC, what is estimated ROI? 
-If exact metrics are not available, why does it have impact for the customer?\>
+
+This has an immense benefit for our client, as it gives them a clear direction to
+begin marketing. By keeping our output binary and simple it also reduces confusion
+on what type of customer they will be marketing to.
 
 ## Learnings
 
-### Project Execution
-<Learnings around the customer engagement process\>
-
-### Data science / Engineering
-<Learnings related to data science/engineering, tips/tricks, etc\>
-
 ### Domain
-<Learnings around the business domain, \>
 
-### Product
-<Learnings around the products and services utilized in the solution \>
+One of the learnings from this project, was the various metrics use to evaluate
+how much a customer is worth to a business. We used the standard market research metrics associated with RFM as they are domain standard.
 
 ###	What's unique about this project, specific challenges
-<Specific issues or setup, unique things, specific challenges that had to be addressed during the engagement and how that was accomplished\>
+
+Unique about this project is that we don't start with labels for our data and
+instead have to generate them using clustering. Then based on our clustering we
+perform predictive modeling. This means this is sort of a second order project
+as it involves unsupervised along with supervised learning.
 
 ## Links
-<Links to published case studies, etc.; Link to git repository where all code sits\>
+
+http://www.inderscience.com/offer.php?id=75325
 
 ## Next Steps
  
-<Next steps. These should include milestones for follow-ups and who 'owns' this action. E.g. Post- Proof of Concept check-in on status on 12/1/2016 by X, monthly check-in meeting by Y, etc.\>
-
-## Appendix
-<Other material that seems relevant – try to keep non-appendix to <20 pages but more details can be included in appendix if needed\>
+Our current model doesn't fully incorporate the time component. Overall I'd rate this project as a D in terms of value, it requires alot more analysis of the transaction history. Along with a better clustering, and predictive modeling scores.
