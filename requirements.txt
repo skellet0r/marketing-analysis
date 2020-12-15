@@ -16,5 +16,4 @@ black
 pytest
 pytest-mock
 requests-mock
--e git+https://github.com/dilshod/xlsx2csv#egg=xlsx2csv
 -e ./
