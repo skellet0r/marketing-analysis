@@ -170,5 +170,6 @@ dependencies:
     - h5py==3.1.0
     - keras==2.4.3
     - xlsx2csv==0.7.7
+    - -e .
 prefix: /home/skelletor/.pyenv/versions/anaconda3-2020.02/envs/marketing-analysis
 
